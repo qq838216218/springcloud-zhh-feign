@@ -1,0 +1,30 @@
+#\u8BBE\u7F6E\u7AEF\u53E3\u53F7
+server:
+  port: 8766
+
+#\u914D\u7F6E\u5B9E\u4F8B\u540D
+spring:
+  application:
+    name: springcloid-zuul
+
+#\u914D\u7F6Eeureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+#\u914D\u7F6Ezuul
+zuul:
+  routes:
+    api-a:      #\u6D88\u8D39\u8005\u7684\u540D\u5B57\u81EA\u5B9A\u4E49  \u533A\u5206\u7528\u7684
+      path: /api-a/**     #\u8BF7\u6C42\u8F6C\u53D1\u7684\u8DEF\u5F84\u8DEF\u5F84\u540D\u81EA\u5B9A\u4E49 **\u4EE3\u8868\u8BF7\u6C42\u7684\u65B9\u6CD5
+      serviceId: consumer-feign   #\u6307\u5B9A\u6D88\u8D39\u7684\u5B9E\u4F8B\u540D\u79F0
+    #\u53EF\u4EE5\u914D\u7F6E\u591A\u4E2A\u8DEF\u7531\u8BF7\u6C42\u8F6C\u53D1
+      # api-b:
+      #  path: /api-b/**
+      #  serviceId: consumer-order-feign
+
+      #consumer-order-feign:
+      #  path: /order/**
+
+      # serviceId: consumer-order-feign

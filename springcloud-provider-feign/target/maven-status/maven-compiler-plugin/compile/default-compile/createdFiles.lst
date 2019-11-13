@@ -1,0 +1,5 @@
+com\jk\dao\UserDao.class
+com\jk\controller\UserController.class
+com\jk\service\UserServiceImpl.class
+com\jk\service\UserService.class
+com\jk\SpringcloudProviderFeignApplication.class
