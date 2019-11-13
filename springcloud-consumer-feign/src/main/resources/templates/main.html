@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap-table.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap-table.css}" />
+</head>
+<body>
+<div class="container">
+    <h1>订单列表</h1>
+    <div class="text-left">
+        <a th:href="@{/toAdd}" class="btn btn-info">Add</a>
+    </div>
+    <table class="table table-hover">
+        <thead>
+        <tr class="info">
+            <th>用户Id</th>
+            <th>用户名称</th>
+            <th>用户地址</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${userList}">
+            <td th:text="${user.userId}"></td>
+            <td th:text="${user.userName}"></td>
+            <td th:text="${user.address}"></td>
+            <td>
+                <a th:href="@{/queryById(userId=${user.userId})}">Edit</a>
+            </td>
+            <td>
+                <a th:href="@{/deleteUser(userId=${user.userId})}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
