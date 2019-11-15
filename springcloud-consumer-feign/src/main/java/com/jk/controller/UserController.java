@@ -72,6 +72,4 @@ public class UserController {
         System.out.println("test123 update!!!!!!!!!!!!!!!!!!!");
         System.out.println("test2563!!!!!!!");
     }
-
-
 }
