@@ -67,8 +67,6 @@ public class UserController {
         return"redirect:queryUser";
     }
 
-    public static void main(String[] args) {
 
-    }
 
 }
